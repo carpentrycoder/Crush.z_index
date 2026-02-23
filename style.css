@@ -1,111 +1,100 @@
-@import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
-
-
-
+@import url('https://fonts.googleapis.com/css2?family=Zeyada&family=Playfair+Display:wght@500&display=swap');
 
 body {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background-size: 1000px;
-  background-image: url("https://www.psdgraphics.com/wp-content/uploads/2022/01/white-math-paper-texture.jpg");
-  background-position: center center;
+  background: linear-gradient(to bottom right, #fff1f5, #ffe4ec);
+  overflow: hidden;
 }
 
+/* Base Paper Style */
 .paper {
-  background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
-  background-size: 500px;
-  background-position: center center;
-  padding: 30px 100px;
-/*  min-width: 800px; */
-  
-  transform: rotateZ(-5deg);
-  box-shadow: 1px 15px 20px 0px rgba(0, 0, 0, 0.438);
-  
   position: absolute;
-}
-
-.paper.image {
-  padding: 10px;
-}
-.paper.image p {
-  font-size: 30px;
-}
-
-
-img {
-  max-height: 200px;
-  width: 100%;
-  user-select: none;
-}
-
-p {
-  font-family: 'Zeyada';
-  font-size: 30px;
-  color: rgb(1, 1, 26);
-  opacity:1;
-  user-select: none;
-  
-   filter: drop-shadow(2px 1.5px 1px rgba(0,0,105,0.9));
-}
-
-.paper {
+  padding: 30px 60px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transform: rotateZ(-4deg);
   text-align: center;
-  font-weight: bold;
-  padding: 20px;
-  background-color: #6e6e6e94; /* Set a background color if needed */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Style the image within the paper */
-.paper img {
-  opacity:1; /* Set the desired opacity value (0.0 to 1.0) */
-  max-width: 80%; /* Ensure the image doesn't exceed its container's width */
-  height: auto; /* Maintain the image's aspect ratio */
-  border-radius: 10px; /* Add a border-radius for a rounded appearance */
-  margin-top: 10px; /* Add space between the text and the image */
+/* Hover effect for romantic feel */
+.paper:hover {
+  transform: rotateZ(0deg) scale(1.05);
+  box-shadow: 0 25px 50px rgba(255, 105, 180, 0.3);
 }
 
+/* Paragraph Styling */
+p {
+  font-family: 'Zeyada', cursive;
+  font-size: 32px;
+  color: #5c0033;
+  margin: 10px 0;
+  user-select: none;
+  text-shadow: 1px 1px 3px rgba(255, 192, 203, 0.4);
+}
+
+/* Heart Paper Special */
+.paper.heart {
+  background: linear-gradient(to right, #ff9a9e, #fecfef);
+  color: white;
+  transform: rotateZ(-6deg);
+}
+
+.paper.heart p {
+  font-size: 40px;
+  color: rgb(37, 34, 34);
+  font-family: 'Zeyada', cursive;
+}
+
+/* Image Paper */
+.paper.image {
+  padding: 25px 50px;
+}
+
+/* Red Romantic Paper */
+.paper.red {
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  color: white;
+}
+
+.paper.red p {
+  color: white;
+  font-size: 36px;
+}
+
+/* Custom Size Paper */
+.paper.custom-size {
+  width: 420px;
+  height: auto;
+}
+
+/* Draggable Final Paper */
 .paper.draggable {
-  width: 500px; /* Set the desired width */
-  height: 500px; /* Set the desired height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* You can adjust other styles as needed */
+  width: 520px;
+  height: auto;
 }
 
 .paper.draggable .p1 {
-  font-size: 60px; /* Set the desired font size */
-  text-align: center;
+  font-size: 45px;
+  font-family: 'Zeyada', cursive;
+  color: #b30059;
 }
 
-.paper.custom-size {
-  width: 400px; /* Set the desired width */
-  height: 600px; /* Set the desired height */
-  /* You can adjust other styles as needed */
-}
-
-/* Style the text inside the paper */
-.paper.custom-size.p1 {
-  font-size: 50px; /* Set the desired font size */
-}
-
+/* Resizable romantic emphasis */
 .resizable {
-  width: 400px; /* Set the desired width */
-  height: 600px; /* Set the desired height */
-  
+  width: 420px;
+  height: auto;
 }
 
-/* Style the text inside the resizable paper */
-.resizable .p3,
-.resizable p {
-  font-size: 40px; /* Set the desired font size */
-  text-align: center; /* Center the text horizontally */
-}
-.resizable p3 {
-  font-size: 50px; /* Set the desired font size */
-  text-align: center; /* Center the text horizontally */
-}
-
+/* Smooth layering effect */
+.paper:nth-child(1) { z-index: 6; }
+.paper:nth-child(2) { z-index: 5; }
+.paper:nth-child(3) { z-index: 4; }
+.paper:nth-child(4) { z-index: 3; }
+.paper:nth-child(5) { z-index: 2; }
+.paper:nth-child(6) { z-index: 1; }
